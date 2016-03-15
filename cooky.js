@@ -5,17 +5,32 @@ $( document ).ready(function() {
   // if (!Cookies.get("flag")){
   //  Cookies.set("flag", true)
   //  $('#welcome').fadeOut();
-    var sugar = 0
-    var choc = 0
-    var lemon = 0
 
-    Cookies.set("sugarcookies", sugar)
-    Cookies.set("chocolatecookies", choc)
-    Cookies.set("lemoncookies", lemon)
+  if(Cookies.get("sugarcookies")){
+    sugar = Cookies.get("sugarcookies")
+  } else {
+    var sugar = Number()
+  }
+  if(Cookies.get("choccookies")){
+    choc = Cookies.get("choccookies")
+  } else {
+    var choc = Number()
+    
+  }
+    
+  if(Cookies.get("lemoncookies")){
+     lemon = Cookies.get("lemoncookies")
+  } else {
+    var lemon = Number()
+   
+  }
+    
+    
+    
 
 
     $('.sugar').text('Congratulations you have ' + Cookies.get("sugarcookies") + " sugar cookies.")
-    $('.choc').text('Congratulations you have ' + Cookies.get("chocolatecookies") + " chocolate cookies.")
+    $('.choc').text('Congratulations you have ' + Cookies.get("choccookies") + " chocolate cookies.")
     $('.lemon').text('Congratulations you have ' + Cookies.get("lemoncookies") + " lemon cookies.")
 
 
@@ -36,9 +51,9 @@ $( document ).ready(function() {
 
           choc ++
 
-          Cookies.set("chocolatecookies", sugar)
+          Cookies.set("choccookies", choc)
 
-          $('.choc').text('You now have ' + Cookies.get("chocolatecookies") + " chocolate cookies.")
+          $('.choc').text('You now have ' + Cookies.get("choccookies") + " chocolate cookies.")
 
      });
 
@@ -68,9 +83,9 @@ $( document ).ready(function() {
 
           choc --
 
-          Cookies.set("chocolatecookies", sugar)
+          Cookies.set("choccookies", choc)
 
-          $('.choc').text('You now have ' + Cookies.get("chocolatecookies") + " chocolate cookies.")
+          $('.choc').text('You now have ' + Cookies.get("choccookies") + " chocolate cookies.")
 
      });
 
@@ -96,11 +111,11 @@ $( document ).ready(function() {
 
 
     Cookies.set("sugarcookies", sugar)
-    Cookies.set("chocolatecookies", choc)
+    Cookies.set("choccookies", choc)
     Cookies.set("lemoncookies", lemon)
 
     $('.sugar').text('You now have ' + Cookies.get("sugarcookies") + " sugar cookies.")
-    $('.choc').text('You have ' + Cookies.get("chocolatecookies") + " chocolate cookies.")
+    $('.choc').text('You have ' + Cookies.get("choccookies") + " chocolate cookies.")
     $('.lemon').text('You have ' + Cookies.get("lemoncookies") + " lemon cookies.")
 
 
